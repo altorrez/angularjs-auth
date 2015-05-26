@@ -15,7 +15,7 @@ $router->post('/users', function() use ($request, $response, $db, $userVD) {
 
 	$body = json_decode($request->getBody(), true);
 	if(!$userVD->test($body)) {
-		echo json_encode($respose->error(array('message' => $userVD->getMessage()), JSON_PRETTY_PRINT));
+		echo json_encode($response->error(array('message' => $userVD->getMessage()), JSON_PRETTY_PRINT));
 		return;
 	}
 
